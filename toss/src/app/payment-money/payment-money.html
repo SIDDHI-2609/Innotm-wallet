@@ -1,0 +1,22 @@
+<div class="payment-class" id="payMoney">
+
+    <h2>Pay Money</h2>
+
+
+
+    <label for="users">Receiver phone No.</label>
+    <select id="userd" [(ngModel)]="payModel.receiverPhoneNumber" class="custom-select">
+        <option value="" disabled selected hidden>select a user</option>
+        <option [value]="data.phoneNumber" *ngFor="let data of userList">
+            {{data.username}} | {{data.phoneNumber}}
+        </option>
+    </select>
+    <!-- <input type="text" [(ngModel)]="payModel.receiverPhoneNumber" name="receiverPhoneNumber" class="form-control" placeholder="Receiver phone number" required> -->
+
+    <div>
+        <label for="amount">Enter the amount</label>
+        <input type="number" [(ngModel)]="payModel.amount" name="amount" class="form-control" placeholder="Enter the amount" required>
+        <button (click)="SendMoney()">Send</button>
+    </div>
+
+</div>

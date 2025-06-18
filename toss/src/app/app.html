@@ -1,0 +1,33 @@
+<app-login *ngIf="isloggedin != true" (logicEvent)="received($event)"></app-login>
+
+<div class="row">
+  <div class="col-2">
+    <app-sidebar *ngIf="isloggedin == true" (logicEvent)="received($event)" />
+  </div>
+  <div class="col-10">
+    <router-outlet *ngIf="isloggedin == true"/>
+  </div>
+</div>
+
+
+
+
+<!-- <div *ngIf="!isloggedin">
+<ul>
+  <li><a routerLink="/form">signup form</a></li>
+  <li><a routerLink="/login">login form</a></li>
+</ul>
+</div>
+
+
+<div *ngIf="isloggedin">
+<ul>
+  <li><a routerLink="/dashboard">Dashboard</a></li>
+  <li><a routerLink="/addMoney">add money</a></li>
+  <li><a routerLink="/paymentMoney">send money</a></li>
+  <li><a routerLink="/history">Transaction history</a></li>
+  
+</ul>
+</div>
+
+<router-outlet /> -->

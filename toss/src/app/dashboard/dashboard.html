@@ -1,0 +1,88 @@
+<div class="container-fluid dashboard-container w-100">
+  <div class="row">
+
+    <!-- Main content -->
+    <main class="col-md-12 ms-sm-auto px-md-4">
+      <div class="pt-3 pb-2 mb-3 border-bottom dashboard-class d-flex justify-content-between align-items-start">
+        <div>
+        <h1 class="h2">Dashboard</h1>
+        <p>You're wallet is active.</p>
+        </div>
+
+        <div class="balance-card" style="min-width: 200px;">
+          <div class="card bg-light border-success">
+            <div class="card-body">
+              <h5 class="card-title text-success">Current Balance</h5>
+              <p class="card-text fs-3">₹{{ amount }}</p>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      <!-- Stats Cards -->
+      <div class="row text-center mb-4 card-container">
+        <div class="col-md-3">
+          <div class="card h-100">
+            <div class="card-body"><a href="/addMoney">
+                <h5 class="card-title">Add Money</h5>
+                <p class="card-text">You can add money here</p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card h-100">
+            <div class="card-body"><a href="/paymentMoney">
+                <h5 class="card-title">Pay Money</h5>
+                <p class="card-text">You can pay money using Phone number</p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card h-100">
+            <div class="card-body"><a href="/history">
+                <h5 class="card-title">Transaction History</h5>
+                <p class="card-text">Transaction history</p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card h-100">
+            <div class="card-body"><a href="/form">
+                <h5 class="card-title">SignUp and LogIn</h5>
+                <p class="card-text">SignUp and Login here </p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Footer Section -->
+      <div class="row text-center">
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-body"><a href="/historydeleteAll">
+              <p>delete all transaction history</p></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body"><a href="/history">
+              <p>delete transaction history by ID</p></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+
+

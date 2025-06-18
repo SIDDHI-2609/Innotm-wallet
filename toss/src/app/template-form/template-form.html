@@ -1,0 +1,73 @@
+<div class="signup-container">
+
+    <form name="form" (ngSubmit)="signupForm.form.valid && onSubmit()" #signupForm="ngForm" class="signup-form" id="signUpForm"
+        novalidate>
+
+
+        <h2>Signup Form</h2>
+
+        <fieldset>
+            <!-- {{signupForm.value | json}} -->
+
+
+            <div>
+                <label>Email </label>
+                <input type="text" [(ngModel)]="signupModel.email" name="email" #email="ngModel"
+                    placeholder="Enter your Email" class="form-control"
+                    [ngClass]="{'is-invalid': signupForm.submitted && email.invalid}" required>
+            </div><br>
+
+
+            <div>
+                <label>Phone Number </label>
+                <input type="text" [(ngModel)]="signupModel.phoneNumber" name="phoneNumber"
+                    placeholder="Enter your phone no." class="form-control" #phoneNumber="ngModel"
+                    [ngClass]="{'is-invalid': signupForm.submitted && phoneNumber.invalid}" required>
+            </div><br>
+
+
+            <div>
+                <label>Gender</label><br>
+                <div class="gender-options">
+
+                <label>
+                    <input type="radio" name="gender" value="Male" [(ngModel)]="signupModel.gender">Male
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="Female" [(ngModel)]="signupModel.gender">Female
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="Prefer not say" [(ngModel)]="signupModel.gender">Prefer not say
+                </label>
+                </div>
+
+            </div><br>
+
+
+            <div>
+                <label>Username</label>
+                <input type="text" [(ngModel)]="signupModel.userName" name="userName" placeholder="Enter Username"
+                    class="form-control" #userName="ngModel"
+                    [ngClass]="{'is-invalid': signupForm.submitted && userName.invalid}" required>
+            </div><br>
+
+
+
+
+            <div>
+                <label>password</label>
+                <input type="password" [(ngModel)]="signupModel.password" name="password"
+                    placeholder="Enter the Password" class="form-control" #password="ngModel"
+                    [ngClass]="{'is-invalid': signupForm.submitted && password.invalid}" required>
+            </div><br>
+
+
+            <div style="align-items: center; text-align: center;">
+                <button type="submit" class="btn btn-primary">Register</button>
+            </div><br>
+        </fieldset>
+    </form>
+
+    <p class="login-link">Already have an account <a href="/login">login</a></p>
+
+</div>

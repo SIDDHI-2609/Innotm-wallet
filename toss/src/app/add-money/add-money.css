@@ -1,0 +1,59 @@
+.add-class{
+    text-align: left;
+    align-items: center;
+    justify-content: center;
+    border:none;
+    margin: auto;
+    border-radius: 10px;
+    padding: 25px;
+    max-width: 400px;
+    background-color:#fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.add-class label{
+    display: block;
+    font-weight: 300;
+    padding: 10px;
+    margin: 10px;
+    margin-top: 5px;
+}
+
+.add-class input{
+    border-radius: 8px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    margin: 10px;
+     margin-bottom: 20px;
+    background-origin: padding-box;
+    box-shadow: 0 2px 5px 0px rgba(0,0,0,0.5);
+}
+
+.add-class input.active,
+.add-class input:hover{
+ transition: background 0.2s ease, color 0.2s ease;
+ font-weight: 500;
+ border: 1px solid #2d3436;
+}
+
+.add-class button{
+    border-radius: 8px;
+    color: white;
+    background-color: #2e86de;
+    cursor: pointer;
+    border: none;
+    padding: 5px 10px 5px 10px;
+    display: block;
+    margin: auto;
+    transition: background 0.2s ease, color 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.add-class button:hover{
+    color: white;
+    background-color: #1b4f72;
+    transform: translateY(-1px);
+}

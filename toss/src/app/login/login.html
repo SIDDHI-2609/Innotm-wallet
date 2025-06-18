@@ -1,0 +1,31 @@
+<div class="login-container">
+
+    <!-- login form -->
+    <form name="form" (ngSubmit)="loginForm.form.valid && onLoginSubmit()" #loginForm="ngForm" id="logInForm"
+        class="login-form" novalidate>
+        <fieldset>
+
+            <h2>LogIn</h2>
+
+            <div>
+                <label> Phone number</label>
+                <input type="text" name="phoneNumber" class="form-control" [(ngModel)]="loginModel.phoneNumber"
+                    placeholder="Enter your phone no." #phoneNumber="ngModel"
+                    [ngClass]="{'is-invalid': loginForm.submitted && phoneNumber.invalid}" required>
+            </div><br>
+
+            <div>
+                <label> password</label>
+                <input type="password" name="password" class="form-control" [(ngModel)]="loginModel.password"
+                    placeholder="Enter the password" #password="ngModel"
+                    [ngClass]="{'is-invalid':  loginForm.submitted && password.invalid}" required>
+            </div><br>
+
+
+            <div style="text-align: center;">
+                <button type="submit" class="btn btn-primary">submit</button>
+            </div>
+        </fieldset>
+    </form>
+     <p class="login-link">Don't have an account <a href="/form">Create</a></p>
+</div>
