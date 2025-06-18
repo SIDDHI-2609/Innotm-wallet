@@ -10,7 +10,7 @@ import { DeleteById } from './delete-by-id/delete-by-id';
 
 export const routes: Routes = [
     {path: '', redirectTo: 'login', pathMatch: 'full'},
-    {path: 'form', component: TemplateForm},
+    {path: 'signUpForm', component: TemplateForm},
     {path: 'login', component: Login},
     {path: 'form/:logIn', component: TemplateForm},
     {path: 'addMoney', component: AddMoney},

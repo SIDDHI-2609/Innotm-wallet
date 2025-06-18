@@ -52,8 +52,8 @@ export class Login {
 
   }
 
-  
-
-
+  goToSignUp() {
+    this.router.navigate(['/signUpForm']);
+  }
 
 }

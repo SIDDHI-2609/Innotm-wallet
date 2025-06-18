@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { Myservice, walletModel } from '../myservice';
-import { JsonPipe } from '@angular/common';
-import { TableModule } from 'primeng/table';
+
 
 @Component({
   selector: 'app-dashboard',
-  imports: [TableModule],
+  imports: [],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css'
 })
