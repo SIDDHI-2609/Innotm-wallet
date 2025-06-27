@@ -9,22 +9,25 @@ import { deleteAllModel, Myservice } from '../myservice';
 })
 export class HistoryDelete {
 
-  data: any;
+  data2: any;
   deleteAllModel: deleteAllModel = new deleteAllModel();
 
   constructor(private myservice: Myservice) { }
 
   deleteAll(phoneNumber: string): void {
     console.log("Deleting history for number:", phoneNumber);
-    this.myservice.deleteAll(phoneNumber).subscribe({
-      next: (data) => {
-        this.data = data.result;
-        alert(data.response ?? 'transaction history deleted successfully');
-      },
-      error: (error) => {
-        alert('deletion failed. Please try again.');
-      }
-    })
+    this.myservice.deleteAll(phoneNumber).subscribe(data2=>{
+      this.data2=data2.reult;
+      alert(data2.response?? 'transaction history deleted successfully');
+    }
+      // next: (data) => {
+      //   this.data2 = data.result;
+      //   alert(data.response ?? 'transaction history deleted successfully');
+      // },
+      // error: (error) => {
+      //   alert('deletion failed. Please try again.');
+      // }
+    )
   }
 
   ngOnInit(): void {

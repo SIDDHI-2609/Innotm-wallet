@@ -19,8 +19,8 @@ export class PaymentMoney {
 
   constructor(private myservice: Myservice) { }
 
-  SendMoney(): void {
-    this.payModel.senderPhoneNumber=this.userPhonenumber;
+  SendMoney():void  {
+    this.payModel.senderPhoneNumber = this.userPhonenumber;
     console.log('sending money with : ', this.payModel);
 
 
@@ -38,29 +38,29 @@ export class PaymentMoney {
   }
 
 
-paymentMoney(): void {
- 
-  this.myservice.paymentMoney(this.payModel).subscribe({
-    next: (data) => {
-      this.data = data.result ?? null;
-      alert(data.response ?? 'payment completed successfully!');
-    },
-    error: (error) => {
-      console.error('Error sending payment:', error);
-      alert('Payment failed. Please check your inputs and try again.');
-    }
-  });
-}
+  paymentMoney(): void {
 
-getallusers() {
-  this.myservice.getusers().subscribe(data=>{
-    this.userList = data.result
-  })
-}
+    this.myservice.paymentMoney(this.payModel).subscribe({
+      next: (data) => {
+        this.data = data.result ?? null;
+        alert(data.response ?? 'payment completed successfully!');
+      },
+      error: (error) => {
+        console.error('Error sending payment:', error);
+        alert('Payment failed. Please check your inputs and try again.');
+      }
+    });
+  }
+
+  getallusers() {
+    this.myservice.getusers().subscribe(data => {
+      this.userList = data.result
+    })
+  }
 
 
-ngOnInit(): void{
-  this.userPhonenumber= sessionStorage.getItem("number")
-  this.getallusers()
-}
+  ngOnInit(): void {
+    this.userPhonenumber = sessionStorage.getItem("number")
+    this.getallusers()
+  }
 }

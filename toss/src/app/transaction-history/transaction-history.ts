@@ -14,7 +14,9 @@ import { TableModule } from 'primeng/table';
 
 
 export class TransactionHistory {
+  data1: any = null;
   data: any = null;
+  data2: any = null;
   historyModel: historyModel = new historyModel();
   userphoneNumber: any;
   constructor(private myservice: Myservice) { }
@@ -28,7 +30,7 @@ export class TransactionHistory {
     this.myservice.getTransactionHistory(this.userphoneNumber).subscribe({
       next: (data) => {
         console.log('API raw data', data);
-        this.data = data?.result ?? data;
+        this.data1 = data?.result ?? data;
         // alert(data?.response ?? 'Transaction history fetched!');
       },
 
@@ -41,16 +43,51 @@ export class TransactionHistory {
 
   ngOnInit(): void {
 
+    // this.userphoneNumber = sessionStorage.getItem("number");
+    // this.seeTransaction();
+
+
     this.userphoneNumber = sessionStorage.getItem("number");
-    this.seeTransaction();
+    if (this.userphoneNumber) {
+      this.seeTransaction(); // ✅ Only fetch transaction history
+    } else {
+      alert('Phone number not found.');
+    }
   }
+
+
 
   deletehistoryById(transactionId: any) {
     this.myservice.deleteById(transactionId).subscribe(data => {
       this.data = data.result;
+      this.seeTransaction();
       alert('transaction history deleted successfully!!');
     })
 
 
   }
+
+  confirmDeleteAll(): void {
+  const confirmDelete = confirm("Are you sure you want to delete all transactions?");
+  if (confirmDelete && this.userphoneNumber) {
+    this.deleteAll(this.userphoneNumber);
+  }
 }
+
+
+
+  deleteAll(phoneNumber: string): void {
+    // console.log("Deleting history for number:", phoneNumber);
+    this.myservice.deleteAll(phoneNumber).subscribe(data2 => {
+      this.data2 = data2.result;
+      this.seeTransaction();
+      alert(data2.response ?? 'transaction history deleted successfully');
+    }
+      
+    )
+  }
+
+  
+}
+
+

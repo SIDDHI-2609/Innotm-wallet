@@ -1,75 +1,83 @@
-/* General container */
-.dashboard-container {
-  background-color: #F5F7FA; /* Secondary: Light gray */
-  min-height: 100vh;
-  padding: 0;
+
+/* General Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #FFF3E0;
+  color: #333333;
 }
 
-/* Header Section */
-.dashboard-class {
-  border-bottom: 1px solid #1E88E5; /* Primary */
-  padding-bottom: 1rem;
-  margin-bottom: 2rem;
+/* Dashboard Header */
+.dashboard-class h1 {
+  color: #FF7043;
+  font-weight: 600;
 }
 
-/* Balance card on top right */
+.dashboard-class p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Balance Card */
 .balance-card .card {
-  min-width: 220px;
-  border: 1px solid #1E88E5;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(30, 136, 229, 0.15);
+  background-color: #ffffff;
+  border-left: 5px solid #43A047;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-/* Stats cards */
+.balance-card .card-title {
+  color: #1E88E5;
+}
+
+/* Stats Cards */
 .card-container .card {
-  transition: transform 0.3s, box-shadow 0.3s;
-  border-radius: 10px;
-  border: 1px solid #E0E0E0;
-  background-color: #FFFFFF;
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  background-color: #ffffff;
+  border-top: 3px solid #FF7043;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  margin: 20px;
+  padding: 10px;
 }
 
 .card-container .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
 }
 
-.card-container .card a {
+.card-container a {
   text-decoration: none;
-  color: #1E88E5; /* Primary */
+  color: #333;
 }
 
-.card-container .card-title {
-  font-weight: 600;
-  color: #333333; /* Text */
+.card-container h5 {
+  color: #29B6F6;
+  margin-bottom: 0.5rem;
 }
 
-/* Footer Section */
-.card-body a {
-  text-decoration: none;
-  color: #43A047; /* Accent green */
+.card-container p {
+  color: #555;
+  font-size: 0.95rem;
 }
 
-.card-body a:hover {
+/* Footer Cards */
+.card-body a p {
+  margin: 0;
+  color: #FF7043;
+  font-weight: 500;
+}
+
+.card-body a:hover p {
   text-decoration: underline;
 }
 
-/* Responsive adjustments */
+/* Responsive Tweaks */
 @media (max-width: 768px) {
-  .balance-card {
-    margin-top: 1rem;
-  }
-
-  .dashboard-class {
-    flex-direction: column;
-    align-items: flex-start !important;
-  }
-
   .card-container .col-md-3 {
     margin-bottom: 1rem;
   }
 
-  .row.text-center .col-md-8,
-  .row.text-center .col-md-4 {
-    margin-bottom: 1rem;
+  .balance-card {
+    margin-top: 1rem;
   }
 }
+

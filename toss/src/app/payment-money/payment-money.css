@@ -1,89 +1,89 @@
-.payment-class{
-    text-align: left;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    margin: auto;
-    padding: 25px;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #fff;
-    border-radius: 15px;
-    max-width: 400px;
-    font-size: 16px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+.payment-class {
+  background-color: #ffffff;
+  padding: 2rem;
+  margin: 2.5rem auto;
+  max-width: 500px;
+  border-radius: 1rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  color: #333333;
 }
 
-.payment-class h2{
-    text-align: center;
-    margin: 10px;
-    padding: auto;
-    border-bottom: 2px solid #2d3436;
+.payment-class h2 {
+  text-align: center;
+  color: #FF7043;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
 }
 
-.payment-class label{
-    display: block;
-    font-weight: 300;
-    padding: 10px;
-    margin: auto;
+.payment-class label {
+  font-weight: 600;
+  color: #FF7043;
+  margin-top: 1rem;
+  display: block;
 }
+
+.payment-class select { 
+  background-color: #ffffff;
+  color: #333333;
+  padding: 0.6rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  width: 100%;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.payment-class select:focus {
+  border-color: #29B6F6;
+  outline: none;
+  box-shadow: 0 0 6px rgba(41, 182, 246, 0.3);
+}
+
+.payment-class option {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+
+/*.payment-class button {
+  background-color: #FF7043;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.payment-class button:hover {
+  background-color: #e55d2f;
+  cursor: pointer;
+}
+*/
 
 .payment-class input{
-    margin-bottom: 16px;
-    margin-top: 6px;
-    justify-content: baseline;
-    border: none;
-    border-radius: 8px;
-    width: 100%;
-    padding: auto;
-    box-shadow: 0 2px 5px 0px rgba(0,0,0,0.5);
+  appearance: none;
+  margin-bottom: 25px;
+  padding: 12px;
 }
 
-.payment-class input.active,
-.payment-class input:hover {
- transition: background 0.2s ease, color 0.2s ease;
- font-weight: 500;
- border: 1px solid #2d3436;
+.payment-class button {
+  background-color: #FF7043;
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  width: 100%;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 112, 67, 0.4);
 }
 
-.payment-class button{
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s;
-    padding: 5px 10px 5px 10px;
-    color: white;
-    background-color: #2e86de;
-    border: none;
-    display: block;
-    margin: auto;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.payment-class button:hover{
-    color: white;
-    background-color: #1b4f72;
-    transform: translateY(-1px);
-
-}
-
-.select-label{
-    font-weight: bold;
-    margin-bottom: 8px;
-    display: block;
-}
-
-
-.custom-select{
-    width: 100%;
-    padding: 8px 12px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    background-color: #f9f9f9;
-    transition: border-color 03.s;
-}
-
-.custom-select :focus{
-    outline: none;
-    border-color: #007bff;
-    background-color: #fff;
+.payment-class button:hover {
+  background-color: #e55d2f;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(255, 112, 67, 0.5);
+  cursor: pointer;
 }

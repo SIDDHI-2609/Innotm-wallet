@@ -1,69 +1,37 @@
-<!-- <div>
-   <label for="number">Phone Number</label> 
-   <input type="text" class="form-control" [(ngModel)]="historyModel.phoneNumber" name="phoneNumber" required>
-   <button (click)="seeTransaction()">See</button>
-  </div> -->
+<div class="transaction-table-wrapper">
+  <div class="transaction-header">
+    <h4>Transaction History:</h4>
+     <button class="delete-all-btn" (click)="confirmDeleteAll()">
+      <i class="bi bi-trash"></i> Delete All Transactions
+    </button>
+  </div>
 
+  <p-table [value]="data1" [paginator]="true" [rows]="5" [tableStyle]="{ 'min-width': '50rem' }"
+    [rowsPerPageOptions]="[5, 10, 20]">
 
-<div>
-  <h4>Transaction History:</h4>
-  <!-- <table class="table">
-    <thead>
-      <tr>
-        <th>s. no.</th>
-        <th>Amount</th>
-        <th>Type</th>
-        <th>Receiver name</th>
-        <th>Receiver Phone no.</th>
-        <th>Date</th>
-        <th>Delete</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngIf="data?.length==0; else allData">
-        <td></td>
-        <td></td>
-        <td></td>
-        <td class="text-center" rowspan="4">no data found</td>
-      </tr>
-      <ng-template #allData>
-        <tr *ngFor="let txn of data; let i = index">
-          <td>{{ txn.transactionId }}</td>
-          <td>{{ txn.transferAmount }}</td>
-          <td>{{ txn.transactionType}}</td>
-          <td>{{ txn.receiverName }}</td>
-          <td>{{ txn.receiverPhoneNumber }}</td>
-          <td>{{ txn.transactionDate | date:'medium' }}</td>
-          <td><button (click)="deletehistoryById(txn.transactionId)">delete</button></td>
+    <ng-template pTemplate="header">
+      
+        <tr>
+          <th>T Id</th>
+          <th>Amount</th>
+          <th>Type</th>
+          <th>Receiver name</th>
+          <th>Receiver Phone no.</th>
+          <th>Date</th>
+          <th>Delete</th>
         </tr>
-      </ng-template>
-    </tbody>
-  </table> -->
-
+    </ng-template>
+    <ng-template  pTemplate="body" let-txn let-rowIndex="rowIndex">
+      <tr>
+        <td>{{ txn.transactionId }}</td>
+        <td>{{ txn.transferAmount }}</td>
+        <td>{{ txn.transactionType}}</td>
+        <td>{{ txn.receiverName }}</td>
+        <td>{{ txn.receiverPhoneNumber }}</td>
+        <td>{{ txn.transactionDate | date:'medium' }}</td>
+        <td><button (click)="deletehistoryById(txn.transactionId)">delete</button></td>
+      </tr>
+    </ng-template>
+  </p-table>
 </div>
 
-<p-table [value]="data" [paginator]="true" [rows]="5" [tableStyle]="{ 'min-width': '50rem' }"
-  [rowsPerPageOptions]="[5, 10, 20]">
-  <ng-template #header>
-    <tr>
-      <th>s. no.</th>
-      <th>Amount</th>
-      <th>Type</th>
-      <th>Receiver name</th>
-      <th>Receiver Phone no.</th>
-      <th>Date</th>
-      <th>Delete</th>
-    </tr>
-  </ng-template>
-  <ng-template #body let-txn>
-    <tr>
-      <td>{{ txn.transactionId }}</td>
-      <td>{{ txn.transferAmount }}</td>
-      <td>{{ txn.transactionType}}</td>
-      <td>{{ txn.receiverName }}</td>
-      <td>{{ txn.receiverPhoneNumber }}</td>
-      <td>{{ txn.transactionDate | date:'medium' }}</td>
-      <td><button (click)="deletehistoryById(txn.transactionId)">delete</button></td>
-    </tr>
-  </ng-template>
-</p-table>

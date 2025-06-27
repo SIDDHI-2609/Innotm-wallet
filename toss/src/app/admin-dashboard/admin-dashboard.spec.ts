@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DeleteById } from './delete-by-id';
+import { AdminDashboard } from './admin-dashboard';
 
-describe('DeleteById', () => {
-  let component: DeleteById;
-  let fixture: ComponentFixture<DeleteById>;
+describe('AdminDashboard', () => {
+  let component: AdminDashboard;
+  let fixture: ComponentFixture<AdminDashboard>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DeleteById]
+      imports: [AdminDashboard]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(DeleteById);
+    fixture = TestBed.createComponent(AdminDashboard);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,12 +1,32 @@
-<div class="add-class" id="addMoney">
+<!-- <div class="add-class" id="addMoney">
 
-    <label>Enter the phone number</label>
-    <input type="text" [(ngModel)]="userPhonenumber" class="form-control">
+    <h1>Add Money</h1>
 
+   
 
     <label>Enter the amount </label>
 
-        <input type="text" [(ngModel)]="Amount" claas="form-control">
+        <input type="text" [(ngModel)]="Amount" class="form-control">
         <button (click)="AddMoney(Amount)">Add</button><br>
     
+</div> -->
+
+
+
+
+<div class="add-class" id="addMoney">
+  <h1>Add Money</h1>
+
+  <div class="form-group">
+    <label for="amount">Enter the amount</label>
+    <input
+      id="amount"
+      type="text"
+      [(ngModel)]="Amount"
+      class="form-control"
+      placeholder="₹ Amount"
+    />
+  </div>
+
+  <button (click)="AddMoney(Amount)">Add</button>
 </div>

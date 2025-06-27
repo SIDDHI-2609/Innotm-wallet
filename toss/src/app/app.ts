@@ -10,11 +10,13 @@ import { PaymentMoney } from './payment-money/payment-money';
 import { Dashboard } from './dashboard/dashboard';
 import { Sidebar } from './sidebar/sidebar';
 import { HistoryDelete } from './history-delete/history-delete';
-import { DeleteById } from './delete-by-id/delete-by-id';
+// import { DeleteById } from './delete-by-id/delete-by-id';
+import { Adminlogin } from './adminlogin/adminlogin';
+import { AdminDashboard } from './admin-dashboard/admin-dashboard';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CommonModule, FormsModule, RouterLink, Login, AddMoney, PaymentMoney, Dashboard, Sidebar, HistoryDelete, DeleteById],
+  imports: [RouterOutlet, CommonModule, FormsModule, RouterLink, Login, AddMoney, PaymentMoney, Dashboard, Sidebar, HistoryDelete, Adminlogin,AdminDashboard],
   providers: [Myservice],
   templateUrl: './app.html',
   styleUrl: './app.css'
@@ -24,6 +26,10 @@ export class App {
   isloggedin=false;
   ngOnInit(): void{
     this.isloggedin=Boolean(sessionStorage.getItem("isloggedin"))
+  
+  console.log("Login status:", this.isloggedin);
+
+
   }
 
   received(event:any){

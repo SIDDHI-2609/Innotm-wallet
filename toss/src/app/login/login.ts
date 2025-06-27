@@ -17,6 +17,7 @@ export class Login {
   data: any;
 
   loginModel: loginModel = new loginModel();
+  admin: any;
 
   constructor(private myservice: Myservice, public router: Router) { }
 
@@ -50,10 +51,17 @@ export class Login {
       }
     })
 
+    if (this.admin.username === 'admin' && this.admin.password === 'admin123') {
+    this.router.navigate(['/admin-dashboard']);
+  } else {
+    alert('Invalid Admin Credentials');
+  }
+
   }
 
   goToSignUp() {
     this.router.navigate(['/signUpForm']);
   }
+
 
 }

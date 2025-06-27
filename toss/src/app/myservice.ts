@@ -28,7 +28,7 @@ export class Myservice {
   }
 
   getTransactionHistory(data: any): Observable<any> {
-    return this.http.get<any>(`${this.url}/api/Transactions/history?phoneNumber=`+data);
+    return this.http.get<any>(`${this.url}/api/Transactions/history?phoneNumber=` + data);
 
   }
 
@@ -46,8 +46,20 @@ export class Myservice {
     return this.http.delete<any>(this.url + '/api/Transactions/history?phoneNumber=' + phoneNumber);
   }
 
-  deleteById(tid:number): Observable<any>{
-    return this.http.delete<any>(this.url +'/api/Transactions/DeleteTransectionById?tid='+tid);
+  deleteById(tid: number): Observable<any> {
+    return this.http.delete<any>(this.url + '/api/Transactions/DeleteTransectionById?tid=' + tid);
+  }
+
+  getAdminStats(): Observable<any> {
+    return this.http.get('http://localhost:3000/admin/stats');
+  }
+
+  getAllUsers(): Observable<any> {
+    return this.http.get('http://localhost:3000/admin/users');
+  }
+
+  adminLogin(username: string, password: string): Observable<any> {
+    return this.http.post('http://localhost:3000/admin/login', { username, password });
   }
 }
 
@@ -79,7 +91,7 @@ export class payModel {
 }
 
 export class historyModel {
-  phoneNumber!: string ;
+  phoneNumber!: string;
 }
 
 export class walletModel {
@@ -91,6 +103,6 @@ export class deleteAllModel {
   // number: string | undefined;
 }
 
-export class deleteByIdModel{
+export class deleteByIdModel {
   tid: Number | undefined;
 }

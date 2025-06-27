@@ -1,66 +1,93 @@
-/* Sidebar Container */
+
+
+
+/* Sidebar tweaks */
 .sidebar {
-  background-color: #F5F7FA; /* Secondary */
-  height: 100vh;
-  padding-top: 2rem;
-  border-right: 1px solid #E0E0E0;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.03);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 220px;
-  z-index: 100;
+ background-color: #FFF3E0;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  border-right: none !important; /* remove border */
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
 }
 
-/* Sidebar Logo */
 .sidebar h2 {
-  font-size: 1.5rem;
-  color: #1E88E5; /* Primary */
-  margin-bottom: 2rem;
+  color: #FF7043;
   font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
-/* Navigation Links */
 .sidebar .nav-link {
-  font-size: 1.05rem;
-  padding: 10px 15px;
-  color: #333333; /* Text */
-  border-radius: 4px;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.sidebar .nav-link:hover,
-.sidebar .nav-link.active {
-  background-color: #E3F2FD;
-  color: #1E88E5;
+  display: block;
+  color: #333333;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
   font-weight: 500;
+  transition: background 0.3s, color 0.3s;
 }
 
-/* Adjust main content when sidebar is present */
-.main-content {
-  margin-left: 220px;
-  padding: 2rem;
+.sidebar .nav-link:hover {
+  background-color: #FF7043;
+  color: #fff;
 }
 
-/* Mobile Responsive */
+.sidebar .nav-link.active {
+  background-color: #FF7043;
+  color: #fff !important;
+}
+
+/* Fix text alignment */
+.sidebar .nav-item {
+  text-align: left;
+}
+
+/* Logout specific */
+.sidebar .nav-item:last-child .nav-link {
+  color: #e53935;
+}
+
+.sidebar .nav-item:last-child .nav-link:hover {
+  background-color: #fce4e4;
+  color: #b71c1c;
+}
+
+/* Card hover */
+.card-container .card {
+  transition: all 0.3s ease;
+}
+
+.card-container .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 12px rgba(0,0,0,0.08);
+}
+
+/* Footer cards */
+.row.text-center .card-body a {
+  color: #FF7043;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.row.text-center .card-body a:hover {
+  text-decoration: underline;
+}
+
+.row {
+  --bs-gutter-x: 0;
+}
+
+/* Responsive spacing */
 @media (max-width: 768px) {
+  .card-container .col-md-3 {
+    margin-bottom: 1rem;
+  }
+
   .sidebar {
-    position: static;
-    width: 100%;
-    height: auto;
-    border-right: none;
-    box-shadow: none;
-  }
-
-  .main-content {
-    margin-left: 0;
-  }
-
-  .sidebar h2 {
-    text-align: center;
-  }
-
-  .sidebar .nav-link {
-    text-align: center;
+    display: none; /* You can later replace this with a toggle menu */
   }
 }
+
+
+
+

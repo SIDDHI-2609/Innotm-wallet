@@ -1,0 +1,122 @@
+/* ===== Transaction Table Container ===== */
+.transaction-table-wrapper {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  color: #333333;
+}
+
+/* ===== Table Structure ===== */
+p-table ::ng-deep table {
+  width: 100%;
+  background-color: #ffffff !important;
+  border-collapse: collapse;
+  color: #333333 !important;
+  font-size: 0.95rem;
+}
+
+/* ===== Table Headers ===== */
+p-table ::ng-deep thead tr {
+  background-color: #FF7043 !important;
+}
+
+p-table ::ng-deep thead th {
+  color: white !important;
+  font-weight: 600;
+  padding: 1rem;
+  border: none;
+  text-align: left;
+}
+
+/* ===== Table Rows ===== */
+p-table ::ng-deep tbody tr {
+  background-color: #ffffff !important;
+  transition: background-color 0.2s ease-in-out;
+} */
+
+ p-table ::ng-deep tbody tr:hover {
+  background-color: #FFF3E0 !important;
+}
+
+p-table ::ng-deep tbody td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #f0f0f0;
+  color: #333333;
+}
+
+/* ===== Delete Button ===== */
+p-table ::ng-deep tbody button {
+  background-color: #e53935;
+  color: #ffffff;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+p-table ::ng-deep tbody button:hover {
+  background-color: #c62828;
+}
+
+/* ===== Paginator Styles ===== */
+p-table ::ng-deep .p-paginator {
+  background-color: #ffffff;
+  padding: 1rem 0;
+  border-top: 1px solid #ddd;
+  justify-content: center;
+}
+
+p-table ::ng-deep .p-paginator .p-paginator-page {
+  color: #333333;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+  margin: 0 0.25rem;
+}
+
+p-table ::ng-deep .p-paginator .p-paginator-page.p-highlight {
+  background-color: #29B6F6;
+  color: white;
+  font-weight: bold;
+}
+
+/* Optional: No data message styling */
+ p-table ::ng-deep .p-datatable-emptymessage {
+  padding: 2rem;
+  text-align: center;
+  color: #999999;
+  font-style: italic;
+} 
+
+/* ===== Section Header Flex Layout ===== */
+.transaction-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* ===== Styled Delete All Button (Themed) ===== */
+.delete-all-btn {
+  background-color: transparent;
+  border: 2px solid #e53935;
+  color: #e53935;
+  padding: 6px 16px;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.delete-all-btn:hover {
+  background-color: #e53935;
+  color: #fff;
+}
+
+
