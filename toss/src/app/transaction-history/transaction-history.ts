@@ -3,6 +3,7 @@ import { historyModel, Myservice } from '../myservice';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TableModule } from 'primeng/table';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-transaction-history',
@@ -19,7 +20,7 @@ export class TransactionHistory {
   data2: any = null;
   historyModel: historyModel = new historyModel();
   userphoneNumber: any;
-  constructor(private myservice: Myservice) { }
+  constructor(private myservice: Myservice, private router: Router) { }
 
   seeTransaction(): void {
 
@@ -77,11 +78,12 @@ export class TransactionHistory {
 
 
   deleteAll(phoneNumber: string): void {
-    // console.log("Deleting history for number:", phoneNumber);
+    
     this.myservice.deleteAll(phoneNumber).subscribe(data2 => {
       this.data2 = data2.result;
       this.seeTransaction();
       alert(data2.response ?? 'transaction history deleted successfully');
+      this.router.navigate(["/dashboard"]);
     }
       
     )

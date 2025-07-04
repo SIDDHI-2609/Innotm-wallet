@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AddMoneyModel, Myservice } from '../myservice';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-money',
@@ -15,7 +16,7 @@ data: any;
 userPhonenumber: string | null | undefined;
 
 
-constructor(private myservice: Myservice){}
+constructor(private myservice: Myservice, public router: Router){}
 
 
 AddMoney(Amount: any): void {
@@ -33,7 +34,7 @@ AddMoney(Amount: any): void {
   this.myservice.AddMoney(model).subscribe(data=>{
     this.data = data.result?? null;
     alert(data.response?? 'operation completed!');
-
+    this.router.navigate(["/dashboard"]);
   })
 
 }

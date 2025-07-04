@@ -6,20 +6,16 @@ import { PaymentMoney } from './payment-money/payment-money';
 import { Dashboard } from './dashboard/dashboard';
 import { TransactionHistory } from './transaction-history/transaction-history';
 import { HistoryDelete } from './history-delete/history-delete';
-import { Adminlogin } from './adminlogin/adminlogin';
-import { AdminDashboard } from './admin-dashboard/admin-dashboard';
+import { AuthGuard } from './auth-guard';  // 👈 Import the guard
 
 export const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
     { path: 'signUpForm', component: TemplateForm },
     { path: 'login', component: Login },
     { path: 'form/:logIn', component: TemplateForm },
-    { path: 'addMoney', component: AddMoney },
-    { path: 'paymentMoney', component: PaymentMoney },
-    { path: 'dashboard', component: Dashboard },
-    { path: 'history', component: TransactionHistory },
-    { path: 'historydeleteAll', component: HistoryDelete },
-    // { path: 'historydeletebyId', component: DeleteById },
-    { path: 'admin-login', component: Adminlogin },
-    { path: 'admin-dashboard', component: AdminDashboard }
+    { path: 'addMoney', component: AddMoney, canActivate: [AuthGuard] },
+    { path: 'paymentMoney', component: PaymentMoney, canActivate: [AuthGuard] },
+    { path: 'dashboard', component: Dashboard, canActivate: [AuthGuard] },
+    { path: 'history', component: TransactionHistory, canActivate: [AuthGuard] },
+    { path: 'historydeleteAll', component: HistoryDelete, canActivate: [AuthGuard] },
 ];

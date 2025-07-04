@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Myservice, payModel } from '../myservice';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-payment-money',
@@ -17,7 +18,7 @@ export class PaymentMoney {
   userPhonenumber: any;
   userList: any;
 
-  constructor(private myservice: Myservice) { }
+  constructor(private myservice: Myservice, public router: Router) { }
 
   SendMoney():void  {
     this.payModel.senderPhoneNumber = this.userPhonenumber;
@@ -44,6 +45,7 @@ export class PaymentMoney {
       next: (data) => {
         this.data = data.result ?? null;
         alert(data.response ?? 'payment completed successfully!');
+        this.router.navigate(["/dashboard"]);
       },
       error: (error) => {
         console.error('Error sending payment:', error);

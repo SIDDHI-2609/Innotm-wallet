@@ -14,7 +14,7 @@ import { Myservice, signupModel } from '../myservice';
 export class TemplateForm {
 title= 'angularProject';
 
-constructor(private myservice: Myservice){}
+constructor(private myservice: Myservice, public router: Router){}
 
 // SignupModel: any ={};
 data: any;
@@ -29,6 +29,7 @@ onSubmit(){
   this.myservice.getDataBySignUp(this.signupModel).subscribe(data=>{
     this.data= data.result
     alert(data.response);
+    this.router.navigate(["/dashboard"]);
     // this.showSignup=false;
   })
 }

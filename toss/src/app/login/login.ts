@@ -40,22 +40,24 @@ export class Login {
     this.myservice.getDataByLogIn(this.loginModel).subscribe(data => {
       this.data = data.result
       alert(data.response);
-      if (data.response == 'Login Successfully !!') {
+      if (data.response == 'login successfully') {
         this.send(true);
         sessionStorage.setItem("isloggedin", "true");
-        this.router.navigate(['/dashboard']);
         sessionStorage.setItem("number", this.data.phoneNumber)
+  //           if (this.data.result.is === 'admin' && this.admin.password === 'admin123') {
+  //   this.router.navigate(['/admin-dashboard']);
+  // } else {
+  //   alert('Invalid Admin Credentials');
+  // }
+        this.router.navigate(['/dashboard']);
+       
       }
       else{
         this.send(false);
       }
     })
 
-    if (this.admin.username === 'admin' && this.admin.password === 'admin123') {
-    this.router.navigate(['/admin-dashboard']);
-  } else {
-    alert('Invalid Admin Credentials');
-  }
+
 
   }
 

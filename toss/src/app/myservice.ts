@@ -9,10 +9,10 @@ export class Myservice {
 
   constructor(private http: HttpClient) { }
 
-  url = 'https://skytm-api.azurewebsites.net'
+  url = 'https://localhost:7046'
 
   getDataBySignUp(data: signupModel): Observable<any> {
-    return this.http.post<any>(this.url + '/api/Auth/signup', data)
+    return this.http.post<any>(this.url + '/api/Auth/Register', data)
   }
 
   getDataByLogIn(data: loginModel): Observable<any> {
@@ -24,43 +24,32 @@ export class Myservice {
   }
 
   paymentMoney(data: payModel): Observable<any> {
-    return this.http.post<any>(this.url + '/api/Transactions/pay', data)
+    return this.http.post<any>(this.url + '/api/Transaction/PayMoney', data)
   }
 
   getTransactionHistory(data: any): Observable<any> {
-    return this.http.get<any>(`${this.url}/api/Transactions/history?phoneNumber=` + data);
+    return this.http.get<any>(`${this.url}/api/Transaction/history?phoneNumber=` + data);
 
   }
 
   showMoney(data: any): Observable<any> {
     console.log(data, 'service data')
-    return this.http.get<any>(this.url + "/api/Users/balance?phoneNumber=" + data);
+    return this.http.get<any>(this.url + "/api/User/balance?phoneNumber=" + data);
   }
 
   getusers(): Observable<any> {
-    return this.http.get<any>(`${this.url}/api/Users/basic-list`);
+    return this.http.get<any>(`${this.url}/api/User/basic-list`);
   }
 
   deleteAll(phoneNumber: any): Observable<any> {
     console.log(`Attempting to delete transaction with ID: ${phoneNumber}`);
-    return this.http.delete<any>(this.url + '/api/Transactions/history?phoneNumber=' + phoneNumber);
+    return this.http.delete<any>(this.url + '/api/Transaction/DeleteAllHistory?phoneNumber=' + phoneNumber);
   }
 
   deleteById(tid: number): Observable<any> {
-    return this.http.delete<any>(this.url + '/api/Transactions/DeleteTransectionById?tid=' + tid);
+    return this.http.delete<any>(this.url + '/api/Transaction/DeleteTransactionById?tid=' + tid);
   }
 
-  getAdminStats(): Observable<any> {
-    return this.http.get('http://localhost:3000/admin/stats');
-  }
-
-  getAllUsers(): Observable<any> {
-    return this.http.get('http://localhost:3000/admin/users');
-  }
-
-  adminLogin(username: string, password: string): Observable<any> {
-    return this.http.post('http://localhost:3000/admin/login', { username, password });
-  }
 }
 
 export class signupModel {

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { deleteAllModel, Myservice } from '../myservice';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-history-delete',
@@ -12,13 +13,14 @@ export class HistoryDelete {
   data2: any;
   deleteAllModel: deleteAllModel = new deleteAllModel();
 
-  constructor(private myservice: Myservice) { }
+  constructor(private myservice: Myservice, private router: Router) { }
 
   deleteAll(phoneNumber: string): void {
     console.log("Deleting history for number:", phoneNumber);
     this.myservice.deleteAll(phoneNumber).subscribe(data2=>{
       this.data2=data2.reult;
       alert(data2.response?? 'transaction history deleted successfully');
+      this.router.navigate(["/dashboard"]);
     }
       // next: (data) => {
       //   this.data2 = data.result;

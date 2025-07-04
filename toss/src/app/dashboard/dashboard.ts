@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Myservice, walletModel } from '../myservice';
+import { Sidebar } from 'primeng/sidebar';
 
 
 @Component({
   selector: 'app-dashboard',
-  imports: [],
+  imports: [Sidebar],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css'
 })

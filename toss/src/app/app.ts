@@ -11,12 +11,11 @@ import { Dashboard } from './dashboard/dashboard';
 import { Sidebar } from './sidebar/sidebar';
 import { HistoryDelete } from './history-delete/history-delete';
 // import { DeleteById } from './delete-by-id/delete-by-id';
-import { Adminlogin } from './adminlogin/adminlogin';
-import { AdminDashboard } from './admin-dashboard/admin-dashboard';
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CommonModule, FormsModule, RouterLink, Login, AddMoney, PaymentMoney, Dashboard, Sidebar, HistoryDelete, Adminlogin,AdminDashboard],
+  imports: [RouterOutlet, CommonModule, FormsModule, RouterLink, Login, AddMoney, PaymentMoney, Dashboard, Sidebar, HistoryDelete],
   providers: [Myservice],
   templateUrl: './app.html',
   styleUrl: './app.css'
@@ -28,7 +27,6 @@ export class App {
     this.isloggedin=Boolean(sessionStorage.getItem("isloggedin"))
   
   console.log("Login status:", this.isloggedin);
-
 
   }
 
