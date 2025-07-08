@@ -18,4 +18,5 @@ export const routes: Routes = [
     { path: 'dashboard', component: Dashboard, canActivate: [AuthGuard] },
     { path: 'history', component: TransactionHistory, canActivate: [AuthGuard] },
     { path: 'historydeleteAll', component: HistoryDelete, canActivate: [AuthGuard] },
+    
 ];

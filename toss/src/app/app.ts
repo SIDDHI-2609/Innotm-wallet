@@ -10,12 +10,13 @@ import { PaymentMoney } from './payment-money/payment-money';
 import { Dashboard } from './dashboard/dashboard';
 import { Sidebar } from './sidebar/sidebar';
 import { HistoryDelete } from './history-delete/history-delete';
+import { Chat } from './chat/chat';
 // import { DeleteById } from './delete-by-id/delete-by-id';
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CommonModule, FormsModule, RouterLink, Login, AddMoney, PaymentMoney, Dashboard, Sidebar, HistoryDelete],
+  imports: [RouterOutlet, CommonModule, FormsModule, RouterLink, Login, AddMoney, PaymentMoney, Dashboard, Sidebar, HistoryDelete, Chat],
   providers: [Myservice],
   templateUrl: './app.html',
   styleUrl: './app.css'
